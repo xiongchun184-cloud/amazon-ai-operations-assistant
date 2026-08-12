@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Evidence-driven Amazon AI operations analysis workspace">
+  <title>OrbitOps | Amazon AI 运营分析助手</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="brand-mark">O</span>
+        <div><strong>OrbitOps</strong><small>Amazon Intelligence</small></div>
+      </div>
+      <div class="project-switcher">
+        <span class="project-icon">PB</span>
+        <div><strong>Portable Blender</strong><small>Amazon US · Demo</small></div>
+        <button class="icon-button" title="切换项目">⌄</button>
+      </div>
+      <nav class="nav-list" aria-label="主导航">
+        <button class="nav-item active" data-view="overview"><span>⌂</span>总览</button>
+        <p>DATA</p>
+        <button class="nav-item" data-view="sources"><span>⇧</span>数据中心 <em id="sourceCount">248</em></button>
+        <button class="nav-item" data-view="evidence"><span>◎</span>证据库</button>
+        <p>AGENTS</p>
+        <button class="nav-item" data-view="product"><span>◇</span>产品分析</button>
+        <button class="nav-item" data-view="competitors"><span>▦</span>竞品分析</button>
+        <button class="nav-item" data-view="reviews"><span>◔</span>Review 分析</button>
+        <button class="nav-item" data-view="pain"><span>!</span>用户痛点 <em>5</em></button>
+        <button class="nav-item" data-view="keywords"><span>⌕</span>关键词研究</button>
+        <button class="nav-item" data-view="listing"><span>✎</span>Listing 工作台</button>
+        <p>DECISION</p>
+        <button class="nav-item" data-view="strategy"><span>↗</span>运营策略</button>
+        <button class="nav-item" data-view="report"><span>▤</span>最终报告</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="quality-ring"><span>92</span></div>
+        <div><strong>数据质量</strong><small>可用于分析</small></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="mobileMenu" aria-label="打开菜单">☰</button>
+        <div class="breadcrumbs"><span>项目</span><b>/</b><strong id="pageCrumb">运营总览</strong></div>
+        <div class="top-actions">
+          <span class="status-pill"><i></i>分析已完成</span>
+          <button class="secondary-button" id="exportButton">导出报告</button>
+          <button class="primary-button" id="runButton">▶ 重新运行</button>
+        </div>
+      </header>
+
+      <section id="appView" class="view"></section>
+    </main>
+  </div>
+
+  <dialog id="evidenceDialog" class="evidence-dialog">
+    <div class="dialog-head"><div><span class="eyebrow">EVIDENCE TRACE</span><h3 id="dialogTitle">证据详情</h3></div><button class="icon-button" id="closeDialog">×</button></div>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <dialog id="runDialog" class="run-dialog">
+    <div class="dialog-head"><div><span class="eyebrow">AGENT PIPELINE</span><h3>运行分析任务</h3></div><button class="icon-button" data-close-run>×</button></div>
+    <div class="pipeline-list" id="pipelineList"></div>
+    <div class="dialog-actions"><button class="secondary-button" data-close-run>取消</button><button class="primary-button" id="startPipeline">开始运行</button></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
